@@ -7,7 +7,9 @@ namespace homework1.Tests
     public class CalculatorTests
     {
         List<FinancialReport> _financialReport;
-        public CalculatorTests()
+
+        [TestInitialize()]
+        public void InitializeTestData()
         {
             this._financialReport = new List<FinancialReport>
             {
@@ -32,10 +34,10 @@ namespace homework1.Tests
             var target = new Calculator();
             var expected = new List<int> { 6, 15, 24, 21 };
             var columnName = "Cost";
-            var itemCount = 3;
+            var itemAccount = 3;
 
             //act
-            var actual = target.GetSumList(_financialReport, columnName, itemCount);
+            var actual = target.GetSumListByColumnAndItemAmount(_financialReport, columnName, itemAccount);
 
             //assert
             CollectionAssert.AreEqual(expected, actual);
@@ -48,10 +50,10 @@ namespace homework1.Tests
             var target = new Calculator();
             var expected = new List<int> { 50, 66, 60 };
             var columnName = "Revenue";
-            var itemCount = 4;
+            var itemAccount = 4;
 
             //act
-            var actual = target.GetSumList(_financialReport, columnName, itemCount);
+            var actual = target.GetSumListByColumnAndItemAmount(_financialReport, columnName, itemAccount);
 
             //assert
             CollectionAssert.AreEqual(expected, actual);
