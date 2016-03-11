@@ -34,10 +34,10 @@ namespace homework1.Tests
             var target = new Calculator();
             var expected = new List<int> { 6, 15, 24, 21 };
             var columnName = "Cost";
-            var itemAccount = 3;
+            var itemCount = 3;
 
             //act
-            var actual = target.GetSumListByColumnAndItemAmount(_financialReport, columnName, itemAccount);
+            var actual = target.GetSumListByColumnAndItemCount(_financialReport, columnName, itemCount);
 
             //assert
             CollectionAssert.AreEqual(expected, actual);
@@ -50,10 +50,10 @@ namespace homework1.Tests
             var target = new Calculator();
             var expected = new List<int> { 50, 66, 60 };
             var columnName = "Revenue";
-            var itemAccount = 4;
+            var itemCount = 4;
 
             //act
-            var actual = target.GetSumListByColumnAndItemAmount(_financialReport, columnName, itemAccount);
+            var actual = target.GetSumListByColumnAndItemCount(_financialReport, columnName, itemCount);
 
             //assert
             CollectionAssert.AreEqual(expected, actual);
